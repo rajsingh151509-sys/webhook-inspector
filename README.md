@@ -8,7 +8,8 @@ A self-hosted alternative to webhook.site. Deploy once, get a permanent URL for 
 - Captures every incoming request — method, path, headers, query params, body, source IP
 - Live UI to browse captured requests, auto-refreshes every 3 seconds
 - Pretty-prints JSON bodies
-- Keeps the last 100 requests per bin, 30-day TTL on inactive bins
+ - Keeps the last 100 requests per bin. Bins persist until you clear them via the UI.
+
 
 ## Deploy to Vercel (one-time setup, ~10 minutes)
 
