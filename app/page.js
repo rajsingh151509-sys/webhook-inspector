@@ -43,7 +43,8 @@ export default function Home() {
           <li>Review headers, body, query params, and method on the bin page</li>
         </ol>
         <p style={{ color: '#9aa0a6', marginBottom: 0 }}>
-          Bins keep the last 100 requests. Inactive bins expire after 30 days.
+             Bins keep the last 100 requests. They stay until you clear them manually.
+
         </p>
       </div>
     </div>
