@@ -10,6 +10,17 @@ export default function BinClient({ binId, baseUrl }) {
   const [autoRefresh, setAutoRefresh] = useState(true);
   const [copied, setCopied] = useState(false);
 
+  // Save this bin to localStorage so the home page can list it under Recent endpoints
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem('recent-bins');
+      const list = stored ? JSON.parse(stored) : [];
+      const filtered = list.filter((b) => b.id !== binId);
+      filtered.unshift({ id: binId, lastVisited: new Date().toISOString() });
+      localStorage.setItem('recent-bins', JSON.stringify(filtered.slice(0, 20)));
+    } catch {}
+  }, [binId]);
+
   const load = useCallback(async () => {
     try {
       const res = await fetch(`/api/requests/${binId}`, { cache: 'no-store' });
