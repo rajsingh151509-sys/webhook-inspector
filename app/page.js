@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { newBinId } from '../lib/storage';
 import { redirect } from 'next/navigation';
+import RecentBins from './RecentBins';
 
 async function createBin() {
   'use server';
@@ -34,6 +35,8 @@ export default function Home() {
         </button>
       </form>
 
+      <RecentBins />
+
       <div style={{ marginTop: 48, padding: 24, background: '#16181d', borderRadius: 8, border: '1px solid #2a2d33' }}>
         <h3 style={{ marginTop: 0 }}>How it works</h3>
         <ol style={{ color: '#9aa0a6', lineHeight: 1.7 }}>
@@ -43,8 +46,7 @@ export default function Home() {
           <li>Review headers, body, query params, and method on the bin page</li>
         </ol>
         <p style={{ color: '#9aa0a6', marginBottom: 0 }}>
-             Bins keep the last 100 requests. They stay until you clear them manually.
-
+          Bins keep the last 100 requests. They stay until you clear them manually.
         </p>
       </div>
     </div>
